@@ -18,11 +18,11 @@ class PatientService {
             try {
                 yield Patient_1.Patient.create({
                     name: patient.name,
-                    age: patient.age,
+                    age: patient.age
                 });
             }
             catch (error) {
-                throw new Error("❌ Failed to create patient!");
+                throw new Error('❌ Failed to create patient!');
             }
         });
     }
@@ -32,18 +32,18 @@ class PatientService {
             try {
                 const new_patient = yield Patient_1.Patient.findOne({
                     where: {
-                        id: patient.id,
-                    },
+                        id: patient.id
+                    }
                 });
                 if (!new_patient) {
-                    throw new Error("Note not found!");
+                    throw new Error('Note not found!');
                 }
                 new_patient.name = patient.name;
                 new_patient.age = patient.age;
                 yield new_patient.save();
             }
             catch (error) {
-                throw new Error("❌ Failed to update patient!");
+                throw new Error('❌ Failed to update patient!');
             }
         });
     }
@@ -53,16 +53,16 @@ class PatientService {
             try {
                 const new_patient = yield Patient_1.Patient.findOne({
                     where: {
-                        id: patientId,
-                    },
+                        id: patientId
+                    }
                 });
                 if (!new_patient) {
-                    throw new Error("❌ Patient not found!");
+                    throw new Error('❌ Patient not found!');
                 }
                 yield new_patient.destroy();
             }
             catch (error) {
-                throw new Error("❌ Failed to delete patient data!");
+                throw new Error('❌ Failed to delete patient data!');
             }
         });
     }
@@ -72,16 +72,16 @@ class PatientService {
             try {
                 const new_patient = yield Patient_1.Patient.findOne({
                     where: {
-                        id: patientId,
-                    },
+                        id: patientId
+                    }
                 });
                 if (!new_patient) {
-                    throw new Error("❌ Patient not found!");
+                    throw new Error('❌ Patient not found!');
                 }
                 return new_patient;
             }
             catch (error) {
-                throw new Error("❌ Failed to retrieve patient information!");
+                throw new Error('❌ Failed to retrieve patient information!');
             }
         });
     }
@@ -92,7 +92,7 @@ class PatientService {
                 return yield Patient_1.Patient.findAll();
             }
             catch (error) {
-                throw new Error("❌ Failed to retrieve patient list!");
+                throw new Error('❌ Failed to retrieve patient list!');
             }
         });
     }

@@ -21,10 +21,10 @@ class App {
         this.app.use((0, cors_1.default)());
     }
     routes() {
-        this.app.route("/").get((req, res) => {
-            res.send("welcome home");
+        this.app.route('/').get((req, res) => {
+            res.send('welcome home');
         });
-        this.app.use("/api/v1/patient", PatientRouter_1.default);
+        this.app.use('/api/v1/patient', PatientRouter_1.default);
     }
     databaseSync() {
         var _a;

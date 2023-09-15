@@ -22,15 +22,15 @@ class patientController {
                 new_patient.age = req.body.age;
                 yield new patientService_1.PatientService().save(new_patient);
                 res.status(201).json({
-                    status: "Created!",
-                    message: "Successfully registered new patient!",
+                    status: 'Created!',
+                    message: 'Successfully registered new patient!'
                 });
             }
             catch (err) {
                 console.log(err);
                 res.status(500).json({
-                    status: "❌ Internal Server Error!",
-                    message: "❌ Internal Server Error!",
+                    status: '❌ Internal Server Error!',
+                    message: '❌ Internal Server Error!'
                 });
             }
         });
@@ -38,17 +38,17 @@ class patientController {
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                let id = parseInt(req.params["id"]);
+                let id = Number(req.params.id);
                 yield new patientService_1.PatientService().delete(id);
                 res.status(200).json({
-                    status: "Ok!",
-                    message: "Successfully deleted patient!",
+                    status: 'Ok!',
+                    message: 'Successfully deleted patient!'
                 });
             }
             catch (err) {
                 res.status(500).json({
-                    status: "❌ Internal Server Error!",
-                    message: "❌ Internal Server Error!",
+                    status: '❌ Internal Server Error!',
+                    message: '❌ Internal Server Error!'
                 });
             }
         });
@@ -56,18 +56,18 @@ class patientController {
     findById(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                let id = parseInt(req.params["id"]);
+                let id = Number(req.params.id);
                 const new_patient = yield new patientService_1.PatientService().retrieveById(id);
                 res.status(200).json({
-                    status: "Ok!",
-                    message: "Successfully fetched patient by id!",
-                    data: new_patient,
+                    status: 'Ok!',
+                    message: 'Successfully fetched patient by id!',
+                    data: new_patient
                 });
             }
             catch (err) {
                 res.status(500).json({
-                    status: "❌ Internal Server Error!",
-                    message: "❌ Internal Server Error!",
+                    status: '❌ Internal Server Error!',
+                    message: '❌ Internal Server Error!'
                 });
             }
         });
@@ -77,15 +77,15 @@ class patientController {
             try {
                 const new_patient = yield new patientService_1.PatientService().retrieveAll();
                 res.status(200).json({
-                    status: "Ok!",
-                    message: "Successfully fetched all patient data!",
-                    data: new_patient,
+                    status: 'Ok!',
+                    message: 'Successfully fetched all patient data!',
+                    data: new_patient
                 });
             }
             catch (err) {
                 res.status(500).json({
-                    status: "❌ Internal Server Error!",
-                    message: "❌ Internal Server Error!",
+                    status: '❌ Internal Server Error!',
+                    message: '❌ Internal Server Error!'
                 });
             }
         });
@@ -93,21 +93,21 @@ class patientController {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                let id = parseInt(req.params["id"]);
+                let id = Number(req.params.id);
                 const new_patient = new Patient_1.Patient();
                 new_patient.id = id;
                 new_patient.name = req.body.name;
                 new_patient.age = req.body.age;
                 yield new patientService_1.PatientService().update(new_patient);
                 res.status(200).json({
-                    status: "Ok!",
-                    message: "Successfully updated patient data!",
+                    status: 'Ok!',
+                    message: 'Successfully updated patient data!'
                 });
             }
             catch (err) {
                 res.status(500).json({
-                    status: "❌ Internal Server Error!",
-                    message: "❌ Internal Server Error!",
+                    status: '❌ Internal Server Error!',
+                    message: '❌ Internal Server Error!'
                 });
             }
         });

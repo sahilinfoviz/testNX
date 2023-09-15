@@ -14,35 +14,35 @@ const sequelize_typescript_1 = require("sequelize-typescript");
 let Patient = class Patient extends sequelize_typescript_1.Model {
 };
 exports.Patient = Patient;
-Patient.PATIENT_TABLE_NAME = "patient";
-Patient.PATIENT_ID = "id";
-Patient.PATIENT_NAME = "name";
-Patient.PATIENT_AGE = "age";
+Patient.PATIENT_TABLE_NAME = 'patient';
+Patient.PATIENT_ID = 'id';
+Patient.PATIENT_NAME = 'name';
+Patient.PATIENT_AGE = 'age';
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        field: Patient.PATIENT_ID,
+        field: Patient.PATIENT_ID
     }),
     __metadata("design:type", Number)
 ], Patient.prototype, "id", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING(100),
-        field: Patient.PATIENT_NAME,
+        field: Patient.PATIENT_NAME
     }),
     __metadata("design:type", String)
 ], Patient.prototype, "name", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.INTEGER,
-        field: Patient.PATIENT_AGE,
+        field: Patient.PATIENT_AGE
     }),
     __metadata("design:type", String)
 ], Patient.prototype, "age", void 0);
 exports.Patient = Patient = __decorate([
     (0, sequelize_typescript_1.Table)({
-        tableName: Patient.PATIENT_TABLE_NAME,
+        tableName: Patient.PATIENT_TABLE_NAME
     })
 ], Patient);
