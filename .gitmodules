@@ -1,0 +1,9 @@
+[submodule "Frontend-UI"]
+	path = Frontend-UI
+	url = git@github.com:healthligence-s/Frontend-UI.git
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:healthligence-s/Frontend-UI.git
+[submodule "packages/frontend/Frontend-UI"]
+	path = packages/frontend/Frontend-UI
+	url = git@github.com:healthligence-s/Frontend-UI.git
